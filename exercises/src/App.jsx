@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import Bienvenida from './components/Bienvenida';
+import Saludo from './components/Saludo';
+import ListaTareas from './components/ListaTareas';
+import ContadorLikes from './components/ContadorLikes';
+import Perfil from './components/Perfil';
+import Imagen from './components/Imagen';
+import Producto from './components/Producto';
+import Fecha from './components/Fecha';
+import RecuentoPalabras from './components/RecuentoPalabras';
+import Estado from './components/Estado';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <Bienvenida nombre="Juan" />
+      <Saludo hora={14} />
+      <ListaTareas tareas={["Comprar pan", "Estudiar React", "Llamar a mamá"]} />
+      <ContadorLikes likes={56} />
+      <Perfil nombre="Ana" edad={25} profesion="desarrolladora" />
+      <Imagen url="https://example.com/imagen.jpg" />
+      <Producto nombre="Portatil" precio="1500 euros" descripcion="Portátil con procesador i7" />
+      <Fecha fecha="2025-01-08" />
+      <RecuentoPalabras texto="Hola, ¿cómo estás?" />
+      <Estado estado="activo" />
+    </div>
+  );
 }
 
-export default App
+export default App;
+
